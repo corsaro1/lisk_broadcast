@@ -1,5 +1,6 @@
 # lisk_broadcast
 broadcast a tx on lisk network
+(thanks for their precious help to fixcrypt, dakk and tobias)
 
 
 sudo apt-get update
