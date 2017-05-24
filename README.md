@@ -10,6 +10,10 @@ sudo apt-get install npm
 
 npm install liskjs
 
+wget https://raw.githubusercontent.com/corsaro1/lisk_broadcast/master/liskm.js
+
+wget https://raw.githubusercontent.com/corsaro1/lisk_broadcast/master/liskt.js
+
 
 
 testnet:
