@@ -11,9 +11,9 @@ sudo apt-get install npm
 
 npm install lisk-js
 
-wget https://raw.githubusercontent.com/corsaro1/lisk_broadcast/master/liskm.js
+wget https://raw.githubusercontent.com/corsaro1/lisk_broadcast/master/lskm.js
 
-wget https://raw.githubusercontent.com/corsaro1/lisk_broadcast/master/liskt.js
+wget https://raw.githubusercontent.com/corsaro1/lisk_broadcast/master/lskt.js
 
 
 
