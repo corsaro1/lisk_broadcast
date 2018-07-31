@@ -45,7 +45,6 @@ function sleep(milliseconds) {
 
 
 var url1 = url+"/api/node/transactions/unsigned?offset=0&limit=100"
-var request = require('sync-request');
 res = request('GET', url1);
 
 
