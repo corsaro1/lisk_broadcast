@@ -5,7 +5,7 @@ sudo apt-get update
 sudo apt-get install nodejs
 npm i readline-sync
 npm i sync-request
-npm i lisk-elements
+npm i lisk-elements@next
 
 edit inside this file:
 pubkey, nethash and url.
