@@ -57,7 +57,7 @@ var myObj2, m, x = 0;
 myObj2 = JSON.parse(res.getBody('utf8'));
 
 
-console.log("total of unsigned tx on node "+myObj2.meta.count);
+//console.log("total of unsigned tx on node "+myObj2.meta.count);
 
 if (myObj2.meta.count == "0") {
        console.log("no tx to sign - exiting") 
@@ -96,14 +96,14 @@ if ((userStr).includes(pubkey)) {
  
  if (x == "0") {
        console.log("no tx to sign, belonging to the given pubkey - exiting") 
-process.exit(-1); 
+process.exit(0); 
  }
   
   }
  
  
 
-console.log(" tx to be signed, belonging to the given pubkey: " +x); 
+console.log(x +" tx to be signed, belonging to the given pubkey "); 
 var seed = readlineSync.question('What is your seed? ', {
      hideEchoBack: true // The typed text on screen is hidden by `*` (default).
 });
