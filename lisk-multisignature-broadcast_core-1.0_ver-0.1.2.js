@@ -73,11 +73,6 @@ for (m = 0; m < (myObj2.meta.count); m+=100) {
 res = request('GET', url+"/api/node/transactions/unsigned?offset="+(m)+"&limit=100");
 
 
-var myObj2, m, y = "";
-myObj2 = JSON.parse(res.getBody('utf8'));
-
-
- 
 
  
  
