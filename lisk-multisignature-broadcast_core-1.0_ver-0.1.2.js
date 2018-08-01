@@ -88,13 +88,14 @@ if ((userStr).includes(pubkey)) {
 
  }
  
- 
+
+  
+  }
+
  if (x == "0") {
        console.log("no tx to sign, belonging to the given pubkey - exiting") 
 process.exit(0); 
  }
-  
-  }
  
  
 
