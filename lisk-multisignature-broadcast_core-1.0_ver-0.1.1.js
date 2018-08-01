@@ -96,7 +96,7 @@ var json_obj = JSON.parse(data);
 
 id = ((myObj.data[i].id));
 
-sleep(200);  // sleep a bit to not flood the node
+//sleep(200);  // sleep a bit to not flood the node
 
 var res = request('POST', url3, {
   json: json_obj, headers: headers
