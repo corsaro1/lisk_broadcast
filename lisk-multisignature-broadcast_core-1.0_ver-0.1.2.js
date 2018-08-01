@@ -7,7 +7,7 @@ npm i sync-request
 npm i lisk-elements
 
 edit inside this file:
-pubkey, nethash (for testnet or mainnet) and url (for testnet or mainnet)
+nethash (for testnet or mainnet), url (for testnet or mainnet) and pubkey
 
 optional:
 nano ~/node_modules/http-response-object/lib/index.js  ## comment at line 51 throw.error wit "//" like follows.
@@ -21,21 +21,24 @@ node lisk-multisignature-broadcast_core-1.0_ver-0.1.1.js
 var readlineSync = require('readline-sync');
 var request = require("sync-request");
 var lisk = require ('lisk-elements');
-//var XMLHttpRequest = require('xhr2');
 
+// **** UNCOMMENT TESTNET OR MAINNET ****
+var url = "https://testnet.lisk.io"; // testnet     ** do not put "/" at the end
+//var url = "https://node01.lisk.io"; // mainnet      ** do not put "/" at the end
+
+
+// **** UNCOMMENT TESTNET OR MAINNET ****
+var nethash = "da3ed6a45429278bac2666961289ca17ad86595d33b31037615d4b8e8f158bba"; // testnet
+//var nethash = "ed14889723f24ecc54871d058d98ce91ff2f973192075c0155ba2b7b70ad2511"; // mainnet
+
+
+// **** PUT HERE THE PUBKEY OF THE MULTISIGNATURE ADDRESS ****
 //var pubkey = "15b50402822a1ecc3d8f17ccae407858078a21ca940cfa919ec42ed50c4e612f"; // my own 1
 //var pubkey = "c56ff6d8c3a4e826c2136e50a4ff1c0f51cc85ec7b05b8c1810c4070cce17a47"; // my own 2
 var pubkey = "380b952cd92f11257b71cce73f51df5e0a258e54f60bb82bccd2ba8b4dff2ec9" // gdtpool
 
 
-// *** UNCOMMENT TESTNET OR MAINNET ***
-var url = "https://testnet.lisk.io"; // testnet     ** do not put "/" at the end
-//var url = "https://node01.lisk.io"; // mainnet      ** do not put "/" at the end
 
-
-// *** UNCOMMENT TESTNET OR MAINNET ***
-var nethash = "da3ed6a45429278bac2666961289ca17ad86595d33b31037615d4b8e8f158bba"; // testnet
-//var nethash = "ed14889723f24ecc54871d058d98ce91ff2f973192075c0155ba2b7b70ad2511"; // mainnet
 
 function sleep(milliseconds) {
   var start = new Date().getTime();
