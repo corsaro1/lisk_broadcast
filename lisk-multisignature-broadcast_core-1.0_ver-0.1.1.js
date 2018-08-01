@@ -11,7 +11,7 @@ edit inside this file:
 pubkey, nethash and url.
 
 optional:
-nano ~/node_modules/http-response-object/lib/index.js  ## comment at line 51 throw.error wit "//" like follows.
+nano ./node_modules/http-response-object/lib/index.js  ## comment at line 51 throw.error wit "//" like follows.
 //  throw.error
 
 usage:
