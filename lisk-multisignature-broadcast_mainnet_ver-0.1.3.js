@@ -1,5 +1,6 @@
 /*
 setup:
+wget https://raw.githubusercontent.com/corsaro1/lisk_broadcast/master/lisk-multisignature-broadcast_mainnet_ver-0.1.3.js
 sudo apt-get update
 sudo apt-get install nodejs
 npm i readline-sync
