@@ -23,13 +23,13 @@ var request = require("sync-request");
 var lisk = require ('lisk-elements');
 
 // **** UNCOMMENT URL FOR TESTNET OR MAINNET ****
-var url = "https://testnet.lisk.io"; // testnet     ** do not put "/" at the end
-//var url = "https://node01.lisk.io"; // mainnet      ** do not put "/" at the end
+//var url = "https://testnet.lisk.io"; // testnet     ** do not put "/" at the end
+var url = "https://node01.lisk.io"; // mainnet      ** do not put "/" at the end
 
 
 // **** UNCOMMENT NETHASH FOR TESTNET OR MAINNET ****
-var nethash = "da3ed6a45429278bac2666961289ca17ad86595d33b31037615d4b8e8f158bba"; // testnet
-//var nethash = "ed14889723f24ecc54871d058d98ce91ff2f973192075c0155ba2b7b70ad2511"; // mainnet
+//var nethash = "da3ed6a45429278bac2666961289ca17ad86595d33b31037615d4b8e8f158bba"; // testnet
+var nethash = "ed14889723f24ecc54871d058d98ce91ff2f973192075c0155ba2b7b70ad2511"; // mainnet
 
 
 // **** PUT HERE THE PUBKEY OF THE MULTISIGNATURE ADDRESS ****
