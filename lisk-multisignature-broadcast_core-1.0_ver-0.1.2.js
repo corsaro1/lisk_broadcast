@@ -24,7 +24,43 @@ var lisk = require ('lisk-elements');
 
 // **** UNCOMMENT URL FOR TESTNET OR MAINNET ****
 //var url = "https://testnet.lisk.io"; // testnet     ** do not put "/" at the end
-var url = "https://node01.lisk.io"; // mainnet      ** do not put "/" at the end
+//var url = "https://node01.lisk.io"; // mainnet      ** do not put "/" at the end
+var url = "https://liskworld.info" // do not put "/" at the end"    ***  default node
+
+var url1 = "https://wallet.mylisk.com" // do not put "/" at the end
+var url2 = "https://liskwallet.punkrock.me" // do not put "/" at the end
+var url3 = "https://lisk-login.vipertkd.com" // do not put "/" at the end
+var url4 = "https://wallet.lisknode.io" // do not put "/" at the end
+var url5 = "https://liskworld.info" // do not put "/" at the end
+
+var node = readlineSync.question('Type a number from 1 to 5 to choose a node and press enter (default 1) : ', {
+
+  hideEchoBack: false // The typed text on screen is hidden by `*` (default).
+
+});
+
+if (node == 1) {
+url = url1
+}
+
+if (node == 2) {
+url = url2
+}
+
+if (node == 3) {
+url = url3
+}
+
+if (node == 4) {
+url = url4
+}
+
+if (node == 5) {
+url = url5
+}
+
+
+
 
 
 // **** UNCOMMENT NETHASH FOR TESTNET OR MAINNET ****
