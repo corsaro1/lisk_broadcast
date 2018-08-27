@@ -25,7 +25,7 @@ var lisk = require ('lisk-elements');
 // **** UNCOMMENT URL FOR TESTNET OR MAINNET ****
 //var url = "https://testnet.lisk.io"; // testnet     ** do not put "/" at the end
 //var url = "https://node01.lisk.io"; // mainnet      ** do not put "/" at the end
-var url = "https://liskworld.info" // do not put "/" at the end"    ***  default node
+var url = "https://wallet.mylisk.com" // do not put "/" at the end"    ***  default node
 
 var url1 = "https://wallet.mylisk.com" // do not put "/" at the end
 var url2 = "https://liskwallet.punkrock.me" // do not put "/" at the end
