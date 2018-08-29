@@ -17,11 +17,14 @@ var readlineSync = require('readline-sync');
 var request = require("sync-request");
 var lisk = require('lisk-elements');
 
+var network = 'mainnet';
 
 
 // **** UNCOMMENT NETHASH FOR TESTNET OR MAINNET ****
-//var nethash = "da3ed6a45429278bac2666961289ca17ad86595d33b31037615d4b8e8f158bba"; // testnet
 var nethash = "ed14889723f24ecc54871d058d98ce91ff2f973192075c0155ba2b7b70ad2511"; // mainnet
+
+if (network == 'testnet')
+    var nethash = "da3ed6a45429278bac2666961289ca17ad86595d33b31037615d4b8e8f158bba"; // testnet
 
 
 // **** PUT HERE THE PUBKEY OF THE MULTISIGNATURE ADDRESS ****
@@ -33,41 +36,24 @@ var pubkey = "380b952cd92f11257b71cce73f51df5e0a258e54f60bb82bccd2ba8b4dff2ec9" 
 // **** UNCOMMENT URL FOR TESTNET OR MAINNET ****
 //var url = "https://testnet.lisk.io"; // testnet     ** do not put "/" at the end
 //var url = "https://node01.lisk.io"; // mainnet      ** do not put "/" at the end
-var url = "https://wallet.mylisk.com" // do not put "/" at the end"    ***  default node
+var url = null;
 
-var url1 = "https://wallet.mylisk.com" // do not put "/" at the end
-var url2 = "https://liskwallet.punkrock.me" // do not put "/" at the end
-var url3 = "https://lisk-login.vipertkd.com" // do not put "/" at the end
-var url4 = "https://wallet.lisknode.io" // do not put "/" at the end
-var url5 = "https://liskworld.info" // do not put "/" at the end
+var urls = [
+    "https://wallet.mylisk.com",
+    "https://liskwallet.punkrock.me",
+    "https://lisk-login.vipertkd.com",
+    "https://wallet.lisknode.io",
+    "https://liskworld.info"
+];
 
 var node = readlineSync.question('Type a number from 1 to 5 to choose a node and press enter (default 1) : ', {
-
     hideEchoBack: false // The typed text on screen is hidden by `*` (default).
-
 });
 
-if (node == 1) {
-    url = url1
-}
-
-if (node == 2) {
-    url = url2
-}
-
-if (node == 3) {
-    url = url3
-}
-
-if (node == 4) {
-    url = url4
-}
-
-if (node == 5) {
-    url = url5
-}
-
-
+if (node > 0 && node < 6)
+    url = urls[node-1];
+else
+    url = urls[0];
 
 
 function sleep(milliseconds) {
@@ -95,16 +81,10 @@ if (myObj2.meta.count == "0") {
 }
 
 
-
-
 for (m = 0; m < (myObj2.meta.count); m += 100) {
-
-    res = request('GET', url + "/api/node/transactions/unsigned?offset=" + (m) + "&limit=100");
-
-
-
-
     var myObj, i;
+    
+    res = request('GET', url + "/api/node/transactions/unsigned?offset=" + (m) + "&limit=100");
     myObj = JSON.parse(res.getBody('utf8'));
 
     for (i = 0; i < (myObj.data).length; i++) {
@@ -112,11 +92,7 @@ for (m = 0; m < (myObj2.meta.count); m += 100) {
         if ((userStr).includes(pubkey)) {
             x += 1;
         }
-
     }
-
-
-
 }
 
 if (x == "0") {
@@ -124,33 +100,22 @@ if (x == "0") {
     process.exit(0);
 }
 
-
-
 console.log(x + " tx to be signed, belonging to the given pubkey ");
 var seed = readlineSync.question('What is your seed? ', {
     hideEchoBack: true // The typed text on screen is hidden by `*` (default).
 });
 
 
-
-
 for (m = 0; m < (myObj2.meta.count); m += 100) {
-
-    res2 = request('GET', url + "/api/node/transactions/unsigned?offset=" + (m) + "&limit=100");
-
-
-
-
     var myObj, i, x = "";
+    
+    res2 = request('GET', url + "/api/node/transactions/unsigned?offset=" + (m) + "&limit=100");
     myObj = JSON.parse(res2.getBody('utf8'));
+    
     for (i = 0; i < (myObj.data).length; i++) {
-
-
         const userStr = JSON.stringify(myObj.data[i]);
+        
         if ((userStr).includes(pubkey)) {
-
-
-
             var transaction = lisk.transaction.createSignatureObject((myObj.data[i]),
                 seed);
 
@@ -161,7 +126,6 @@ for (m = 0; m < (myObj2.meta.count); m += 100) {
                 'nethash': nethash
             };
             var data = JSON.stringify(transaction);
-
             var json_obj = JSON.parse(data);
 
             id = ((myObj.data[i].id));
@@ -176,9 +140,6 @@ for (m = 0; m < (myObj2.meta.count); m += 100) {
 
             try {
                 var reply = JSON.stringify(res.getBody('utf8'));
-
-
-
 
                 if (reply.includes("true")) {
                     console.log(id + " Signed");
@@ -205,15 +166,7 @@ for (m = 0; m < (myObj2.meta.count); m += 100) {
                 if (res.statusCode == 409) {
                     console.log(id + " Failed");
                 }
-
             }
-
-
-
         };
-
-
     };
-
-
 };
