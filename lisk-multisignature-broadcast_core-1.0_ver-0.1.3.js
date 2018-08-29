@@ -11,7 +11,7 @@ optional:
 nano ~/node_modules/http-response-object/lib/index.js  ## comment at line 51 throw.error wit "//" like follows.
 //  throw.error
 usage:
-node lisk-multisignature-broadcast_core-1.0_ver-0.1.1.js
+node lisk-multisignature-broadcast_core-1.0_ver-0.1.3.js
 */
 var readlineSync = require('readline-sync');
 var request = require("sync-request");
