@@ -43,10 +43,11 @@ var urls = [
     "https://liskwallet.punkrock.me",
     "https://lisk-login.vipertkd.com",
     "https://wallet.lisknode.io",
+    "https://lisknode.grumlin.com",
     "https://liskworld.info"
 ];
 
-var node = readlineSync.question('Type a number from 1 to 5 to choose a node and press enter (default 1) : ', {
+var node = readlineSync.question('Type a number from 1 to 6 to choose a node and press enter (default 1) : ', {
     hideEchoBack: false // The typed text on screen is hidden by `*` (default).
 });
 
