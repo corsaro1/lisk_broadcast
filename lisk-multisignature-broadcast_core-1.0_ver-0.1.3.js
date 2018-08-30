@@ -17,10 +17,9 @@ var readlineSync = require('readline-sync');
 var request = require("sync-request");
 var lisk = require('lisk-elements');
 
+// **** TESTNET OR MAINNET ****
 var network = 'mainnet';
 
-
-// **** UNCOMMENT NETHASH FOR TESTNET OR MAINNET ****
 var nethash = "ed14889723f24ecc54871d058d98ce91ff2f973192075c0155ba2b7b70ad2511"; // mainnet
 
 if (network == 'testnet')
@@ -33,9 +32,7 @@ if (network == 'testnet')
 var pubkey = "380b952cd92f11257b71cce73f51df5e0a258e54f60bb82bccd2ba8b4dff2ec9" // gdtpool
 
 
-// **** UNCOMMENT URL FOR TESTNET OR MAINNET ****
-//var url = "https://testnet.lisk.io"; // testnet     ** do not put "/" at the end
-//var url = "https://node01.lisk.io"; // mainnet      ** do not put "/" at the end
+// **** URL FOR TESTNET OR MAINNET ****
 var url = null;
 
 var urls = [
