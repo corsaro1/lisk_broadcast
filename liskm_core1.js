@@ -1,10 +1,12 @@
 /*
 setup linux:
+wget https://raw.githubusercontent.com/corsaro1/lisk_broadcast/master/liskm_core1.js
 sudo apt install nodejs
 npm install lisk-elements
 npm install readline-sync
 
 setup windows:
+certutil.exe -urlcache -split -f "https://raw.githubusercontent.com/corsaro1/lisk_broadcast/master/liskm_core1.js"
 install nodejs from https://nodejs.org/en/
 npm install lisk-elements
 npm install readline-sync
