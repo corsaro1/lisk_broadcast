@@ -1,3 +1,23 @@
+/*
+setup linux:
+sudo apt install nodejs
+npm install lisk-elements
+npm install readline-sync
+
+setup windows:
+install nodejs from https://nodejs.org/en/
+npm install lisk-elements
+npm install readline-sync
+
+usage:
+node lisk_core1.js <amount> <destination address>
+
+example:
+node liskm_core1.js 1.00 1234567890L
+
+*/
+
+
 var lisk = require ('lisk-elements');
 var readlineSync = require('readline-sync');
 
