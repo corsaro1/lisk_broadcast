@@ -7,7 +7,7 @@ npm install readline-sync
 
 setup windows:
 certutil.exe -urlcache -split -f "https://raw.githubusercontent.com/corsaro1/lisk_broadcast/master/liskm_core1.js"
-install nodejs from https://nodejs.org/en/
+@rem install nodejs from https://nodejs.org/en/
 npm install lisk-elements
 npm install readline-sync
 
