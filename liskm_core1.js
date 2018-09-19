@@ -34,7 +34,7 @@ var secondsecret = readlineSync.question('Type your second secret (if any); defa
     hideEchoBack: true // The typed text on screen is hidden by `*` (default).
 });
 if (secondsecret == "") {secondsecret = null};
-    var amount      = amountx * Math.pow(10, 8);
+    var amount      = Math.floor(amountx * Math.pow(10, 8));
     var transaction = lisk.transaction.transfer({
     amount: amount,
     recipientId: address,
