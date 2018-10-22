@@ -1,0 +1,48 @@
+howto to create a multisign address on lisk testnet:
+
+cat > lisk-multi-address-creation.js
+
+#then paste this (kindly change the keysgroup accordling):
+
+
+var lisk = require ('lisk-elements');
+
+var transaction = lisk.transaction.registerMultisignature({
+    keysgroup: [
+        'a3949cce9200f4afacd07873dc146468838cd80fadee3de64ab31f8cb6ac21db',
+        'ba02870e84550392a64be050f3c85dc67d8a6e4e16bc7144baf42056aeb3e218',
+        '24b6e04f9f05d1c35513f2241f9cfce74b22aec74d080d2c39d669b45cd52191',
+    ],
+    lifetime: 34,
+    minimum: 2,
+    passphrase: 'the seed of the address you want to modify in multisignature',
+});
+
+console.log("%j", transaction);
+
+
+
+# press ctrl + c to exit and save
+
+
+
+# then type:
+
+var=$(node lisk-multi-address-creation.js)
+curl -k -H "Content-Type: application/json" -H "version: 0.9.15" -H "port: 1" -H 'nethash: da3ed6a45429278bac2666961289ca17ad86595d33b31037615d4b8e8f158bba' -X POST \
+-d $var https://testnet.lisk.io/api/transactions/
+
+
+#then check on https://testnet.lisk.io/api/node/transactions/unsigned?offset=0&limit=100  the pending tx
+
+# now all the 3 pubkeys have to sign the tx:
+
+wget https://raw.githubusercontent.com/corsaro1/lisk_broadcast/master/lisk-multisignature-broadcast_core-1.0_ver-0.1.1.js
+
+# now edit the file lisk-multisignature-broadcast_core-1.0_ver-0.1.1.js and change the pubkey
+
+nano lisk-multisignature-broadcast_core-1.0_ver-0.1.1.js
+
+# then you can sign
+
+node lisk-multisignature-broadcast_core-1.0_ver-0.1.0.js
