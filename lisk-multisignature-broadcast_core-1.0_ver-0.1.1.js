@@ -2,7 +2,8 @@
 setup:
 wget https://raw.githubusercontent.com/corsaro1/lisk_broadcast/master/lisk-multisignature-broadcast_core-1.0_ver-0.1.1.js
 sudo apt-get update
-sudo apt-get install nodejs
+curl -sL  https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
 npm i readline-sync
 npm i sync-request
 npm i lisk-elements@next
