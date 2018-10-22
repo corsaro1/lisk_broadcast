@@ -45,4 +45,4 @@ nano lisk-multisignature-broadcast_core-1.0_ver-0.1.1.js
 
 # then you can sign
 
-node lisk-multisignature-broadcast_core-1.0_ver-0.1.0.js
+node lisk-multisignature-broadcast_core-1.0_ver-0.1.1.js
