@@ -1,5 +1,11 @@
 howto to create a multisign address on lisk testnet:
 
+curl -sL  https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+npm i readline-sync
+npm i sync-request
+npm i lisk-elements@next
+
 cat > lisk-multi-address-creation.js
 
 #then paste this (kindly change the keysgroup accordling):
