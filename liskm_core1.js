@@ -36,7 +36,7 @@ var secondsecret = readlineSync.question('Type your second secret (if any); defa
 if (secondsecret == "") {secondsecret = null};
     var amount      = Math.floor(amountx * Math.pow(10, 8));
     var transaction = lisk.transaction.transfer({
-    amount: amount,
+    amount: '' + amount,
     recipientId: address,
     data: null,
     passphrase: secret,
