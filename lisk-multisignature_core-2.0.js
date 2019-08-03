@@ -38,6 +38,7 @@ var url = null;
 
 var urls = [
     "https://wallet.mylisk.com",
+    "https://www.hmachadowallet.com",
     "https://lisk-api.punkrock.me",
     "https://lisk-login.vipertkd.com",
     "https://wallet.lisknode.io",
@@ -49,7 +50,7 @@ var node = readlineSync.question('Type a number from 1 to 6 to choose a node and
     hideEchoBack: false // The typed text on screen is hidden by `*` (default).
 });
 
-if (node > 0 && node < 7)
+if (node > 0 && node < 8)
     url = urls[node-1];
 else
     url = urls[0];
