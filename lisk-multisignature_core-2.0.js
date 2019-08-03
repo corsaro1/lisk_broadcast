@@ -152,7 +152,7 @@ for (m = 0; m < (myObj2.meta.count); m += 100) {
                     console.log(id + " Signature already exists");
                 }
 
-                if (reply.includes("Failed to verify signature")) {
+                if (reply.includes("is not a member for account")) {
                     console.log(id + " Failed to verify signature");
                 }
 
