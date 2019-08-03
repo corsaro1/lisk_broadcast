@@ -46,7 +46,7 @@ var urls = [
     "https://liskworld.info"
 ];
 
-var node = readlineSync.question('Type a number from 1 to 6 to choose a node and press enter (default 1) : ', {
+var node = readlineSync.question('Type a number from 1 to 7 to choose a node and press enter (default 1) : ', {
     hideEchoBack: false // The typed text on screen is hidden by `*` (default).
 });
 
