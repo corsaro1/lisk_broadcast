@@ -145,7 +145,7 @@ for (m = 0; m < (myObj2.meta.count); m += 100) {
                     console.log(id + " Signed");
                 }
 
-                if (reply.includes("Transaction not found")) {
+                if (reply.includes("transaction not found")) {
                     console.log(id + " Transaction not found");
                 }
 
